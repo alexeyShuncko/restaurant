@@ -1,7 +1,8 @@
 $primary-color: #d3b47f;
 $bg-clr: #3a4574;
 
-body {
+body,
+ul {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
@@ -18,6 +19,7 @@ ul > li {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px 20px;
 }
 .reserve__img {
   position: absolute;
@@ -30,7 +32,9 @@ ul > li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 51px;
+  img {
+    width: 30%;
+  }
 }
 .reserve__content {
   width: 100%;
@@ -39,22 +43,21 @@ ul > li {
 .phone {
   i {
     color: $primary-color;
-    font-size: 20px;
+    font-size: 1.25em;
   }
   span {
     color: #ffffff;
   }
 }
 .reserve__time {
-  margin-top: 124px;
+  margin-top: 10px;
   color: #ffffff;
-  font-size: 24px;
+  font-size: 0.8em;
 }
 .reserve__title {
-  margin-top: 24px;
   color: #ffffff;
-  font-size: 64px;
-  line-height: 88px;
+  font-size: 1.3em;
+  line-height: 1.3em;
   font-weight: 700;
 }
 
@@ -62,18 +65,17 @@ ul > li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 40px;
+  margin: 10px 0;
   button {
-    padding: 38px 65px;
+    padding: 8px 10px;
     background: $bg-clr;
     color: #ffffff;
     border: none;
     outline: none;
-    font-size: 18px;
   }
   ul {
     display: flex;
-    gap: 25px;
+    gap: 5px;
     li {
       display: flex;
       align-items: center;
@@ -81,71 +83,46 @@ ul > li {
       color: #ffffff;
       border: 1px solid #ffffff;
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
+      width: 18px;
+      height: 18px;
+      font-size: 0.8em;
     }
   }
 }
 
 .menu {
+  padding: 10px 20px;
   display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 100px;
-  margin-bottom: 200px;
+  flex-direction: column;
+  margin-top: 20px;
   img {
-    width: 323px;
-    height: 486px;
-  }
-}
-
-.menu__img {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  div {
-    width: 471px;
-    height: 502px;
-    border: 2px solid $primary-color;
-  }
-  img {
-    position: absolute;
-  }
-  .imgLeft {
-    top: 150px;
-    left: -100px;
-  }
-  .imgRight {
-    bottom: 150px;
-    right: -100px;
+    width: 150px;
+    height: 225px;
   }
 }
 
 .menu__list {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-right: 124px;
+  gap: 10px;
   .day {
-    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   .dish {
     display: flex;
     align-items: center;
-    font-size: 18px;
-    margin-bottom: 20px;
+    font-size: 0.75em;
+    margin-bottom: 5px;
     .dish__dots {
       height: 5px;
       width: 5px;
       background: $primary-color;
       border-radius: 50%;
-      margin-left: 12px;
+      margin-left: 8px;
     }
     .dish__composition {
-      margin-left: 12px;
+      margin-left: 8px;
     }
   }
   .line {
@@ -155,9 +132,35 @@ ul > li {
   }
 }
 
+.menu__img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  padding: 40px;
+  div {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border: 2px solid $primary-color;
+  }
+
+  .imgLeft {
+    position: absolute;
+    top: 30%;
+    left: -15%;
+  }
+  .imgRight {
+    position: absolute;
+    bottom: 30%;
+    right: -15%;
+  }
+}
+
 .swiper__container {
   background: $bg-clr;
-  padding: 100px 100px;
+  padding: 10px 20px;
 }
 
 .swiper-slide {
@@ -167,26 +170,32 @@ ul > li {
   align-items: center;
   justify-content: center;
   text-align: center;
+  .swiper-slide__quotes {
+    width: 10%;
+  }
   .swiper-slide__title {
-    font-size: 36px;
-    margin-top: 34px;
-    margin-bottom: 20px;
-    width: 775px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    width: 70%;
     text-align: center;
   }
   .swiper-slide__text {
-    width: 775px;
-    line-height: 40px;
-    margin-bottom: 40px;
+    width: 70%;
+    font-size: 0.8em;
+    line-height: 1em;
+    margin-bottom: 10px;
   }
   .swiper-slide__name {
-    font-size: 24px;
+    font-size: 0.9em;
     letter-spacing: 0.245em;
   }
 }
 .swiper-button-prev,
 .swiper-button-next {
   color: $primary-color;
+  &::after {
+    font-size: 1.4em;
+  }
 }
 .swiper-button-prev.swiper-button-disabled,
 .swiper-button-next.swiper-button-disabled {
