@@ -22,6 +22,10 @@ function jsTask() {
   return src('src/**.js').pipe(dest('dist'));
 }
 
+function imgTask() {
+  return src('src/img/*.png').pipe(dest('dist/img'));
+}
+
 function scss() {
   return src('src/scss/**.scss')
     .pipe(sass())
@@ -34,7 +38,7 @@ function serve() {
   browserSync.init({
     server: './dist',
   });
-  watch('src/**/*.*', series(clear, scss, jsTask, htmlTask)).on(
+  watch('src/**/*.*', series(clear, scss, jsTask, imgTask, htmlTask)).on(
     'change',
     browserSync.reload
   );
@@ -43,4 +47,4 @@ function serve() {
 function clear() {
   return deleteAsync('dist');
 }
-gulp.task('default', series(clear, scss, jsTask, htmlTask, serve));
+gulp.task('default', series(clear, scss, jsTask, imgTask, htmlTask, serve));

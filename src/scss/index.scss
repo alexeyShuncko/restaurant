@@ -1,6 +1,90 @@
 $primary-color: #d3b47f;
 $bg-clr: #3a4574;
 
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100%;
+}
+
+.reserve {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reserve__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.reserve__head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 51px;
+}
+.reserve__content {
+  width: 100%;
+  max-width: 1024px;
+}
+.phone {
+  i {
+    color: $primary-color;
+    font-size: 20px;
+  }
+  span {
+    color: #ffffff;
+  }
+}
+.reserve__time {
+  margin-top: 124px;
+  color: #ffffff;
+  font-size: 24px;
+}
+.reserve__title {
+  margin-top: 24px;
+  color: #ffffff;
+  font-size: 64px;
+  line-height: 88px;
+  font-weight: 700;
+}
+
+.reserve__btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+  button {
+    padding: 38px 65px;
+    background: $bg-clr;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+  }
+  ul {
+    display: flex;
+    gap: 25px;
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
 .swiper-slide {
   color: $primary-color;
   display: flex;
