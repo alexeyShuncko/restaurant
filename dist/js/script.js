@@ -4,3 +4,14 @@ new Swiper('.swiper', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+let menu = document.querySelector('.head__menu__container');
+let list = document.getElementById('list');
+
+menu.addEventListener('click', () => {
+  if (list.classList.contains('active')) {
+    list.classList.remove('active');
+  } else {
+    list.classList.add('active');
+  }
+});
