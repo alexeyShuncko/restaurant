@@ -6,8 +6,8 @@ $bg-clr: #3a4574;
   position: absolute;
   top: 0;
   left: 0;
-  min-height: 100%;
-  min-width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
   &.shadow {
@@ -117,7 +117,7 @@ ul > li {
 }
 @media (min-width: 1024px) {
   html {
-    font-size: 25px;
+    font-size: 24px;
   }
   .head__menu,
   .head__menu__container {
@@ -128,6 +128,7 @@ ul > li {
     gap: 20px;
     color: #ffffff;
     li {
+      line-height: 24px;
       font-size: 16px;
       cursor: pointer;
       transition: 0.2s;
@@ -143,15 +144,18 @@ ul > li {
   max-width: 1024px;
 }
 .phone {
-  i {
-    color: $primary-color;
-    font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 20px;
+    margin-right: 11px;
   }
   span {
+    font-size: 16px;
     cursor: pointer;
     color: #ffffff;
     transition: 0.2s;
-
     &:hover {
       color: $primary-color;
     }
@@ -159,24 +163,27 @@ ul > li {
 }
 .reserve__time {
   color: #ffffff;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: 24px;
 }
 .reserve__title {
   color: #ffffff;
-  font-size: 1.3rem;
-  line-height: 1.8rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
   font-weight: 700;
 }
 
 .reserve__btn {
   display: flex;
+  gap: 10px;
   justify-content: space-between;
   align-items: center;
   margin-top: 40px;
   margin-bottom: 265px;
   button {
-    padding: 1rem 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    padding: 1rem 1.5rem;
     background: $bg-clr;
     color: #ffffff;
     border: none;
@@ -197,9 +204,9 @@ ul > li {
       color: #ffffff;
       border: 1px solid #ffffff;
       border-radius: 50%;
-      width: 1.2rem;
-      height: 1.2rem;
-      font-size: 0.8rem;
+      width: 1.8rem;
+      height: 1.8rem;
+      font-size: 0.7rem;
       cursor: pointer;
       transition: 0.2s;
       &:hover {
@@ -234,6 +241,7 @@ ul > li {
   justify-content: center;
   gap: 20px;
   input {
+    font-size: 0.8rem;
     border: 1px solid #ccc;
     padding: 10px;
     outline: none;
@@ -243,9 +251,11 @@ ul > li {
     }
   }
   button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
     background: $bg-clr;
     color: #fff;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border: none;
     outline: none;
     cursor: pointer;
@@ -255,6 +265,7 @@ ul > li {
     }
   }
   #btnExit {
+    font-family: 'Poppins', sans-serif;
     background: #db8282;
     &:hover {
       box-shadow: 0 0 10px #db8282, 0 0 20px #db8282;
@@ -271,33 +282,23 @@ ul > li {
   max-width: 1024px;
   img {
     width: 10rem;
-    height: 14rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 20px auto;
-    max-width: 1024px;
+    height: 15rem;
   }
 }
 
 .menu__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
   .day {
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   .dish {
     display: flex;
     align-items: center;
     font-size: 0.75rem;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     .dish__dots {
       height: 5px;
       width: 5px;
@@ -320,28 +321,56 @@ ul > li {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
-  margin-bottom: 30px;
   padding: 40px;
   div {
+    width: 100%;
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 19rem;
+    height: 22rem;
     border: 2px solid $primary-color;
   }
 
   .imgLeft {
     position: absolute;
-    top: 30%;
-    left: -15%;
+    top: 40%;
+    left: -5%;
   }
   .imgRight {
     position: absolute;
-    bottom: 30%;
-    right: -15%;
+    bottom: 40%;
+    right: -5%;
   }
 }
+@media (min-width: 1024px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    margin: 20px auto;
+    max-width: 1024px;
+    min-height: 600px;
+    img {
+      width: 250px;
+      height: 375px;
+    }
+  }
+  .menu__img {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
 
+  .menu__img {
+    .imgLeft {
+      position: absolute;
+      top: 40%;
+      left: -7%;
+    }
+    .imgRight {
+      position: absolute;
+      bottom: 40%;
+      right: -7%;
+    }
+  }
+}
 .swiper__container {
   background: $bg-clr;
   padding: 220px 20px;
@@ -355,18 +384,22 @@ ul > li {
   justify-content: center;
   text-align: center;
   .swiper-slide__quotes {
-    width: 10%;
+    width: 8%;
   }
   .swiper-slide__title {
+    font-size: 1.5rem;
     margin-top: 10px;
+    font-weight: 600;
     margin-bottom: 5px;
     width: 70%;
     text-align: center;
   }
   .swiper-slide__text {
     width: 70%;
+    color: #fff;
+    font-weight: 400;
     font-size: 0.8rem;
-    line-height: 1rem;
+    line-height: 2rem;
     margin-bottom: 10px;
   }
   .swiper-slide__name {
@@ -385,4 +418,10 @@ ul > li {
 .swiper-button-next.swiper-button-disabled {
   color: #ffffff;
   opacity: 1;
+}
+
+@media (min-width: 1024px) {
+  .swiper {
+    width: 75%;
+  }
 }

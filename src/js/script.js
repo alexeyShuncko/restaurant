@@ -8,7 +8,8 @@ new Swiper('.swiper', {
 let menu = document.querySelector('.head__menu__container');
 let list = document.getElementById('list');
 
-menu.addEventListener('click', () => {
+menu.addEventListener('click', (e) => {
+  e.stopPropagation();
   if (list.classList.contains('active')) {
     list.classList.remove('active');
   } else {
@@ -20,6 +21,12 @@ let btn = document.getElementById('btnForm');
 let body = document.querySelector('body');
 let mask = document.querySelector('.mask');
 let formContainer = document.querySelector('.formContainer');
+
+body.addEventListener('click', () => {
+  if (list.classList.remove('active')) {
+    list.classList.remove('active');
+  }
+});
 
 btn.addEventListener('click', (e) => {
   mask.classList.add('shadow');
