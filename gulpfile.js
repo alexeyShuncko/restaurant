@@ -15,15 +15,15 @@ const sass = gulpSass(dartSass);
 function htmlTask() {
   return src('src/**.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(dest('dist'));
+    .pipe(dest('docs'));
 }
 
 function jsTask() {
-  return src('src/js/*.js').pipe(dest('dist/js'));
+  return src('src/js/*.js').pipe(dest('docs/js'));
 }
 
 function imgTask() {
-  return src('src/img/*.png').pipe(dest('dist/img'));
+  return src('src/img/*.png').pipe(dest('docs/img'));
 }
 
 function scss() {
@@ -31,12 +31,12 @@ function scss() {
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(csso())
-    .pipe(dest('dist/css'));
+    .pipe(dest('docs/css'));
 }
 
 function serve() {
   browserSync.init({
-    server: './dist',
+    server: './docs',
   });
   watch('src/**/*.*', series(clear, scss, jsTask, imgTask, htmlTask)).on(
     'change',
@@ -45,6 +45,6 @@ function serve() {
 }
 
 function clear() {
-  return deleteAsync('dist');
+  return deleteAsync('docs');
 }
 gulp.task('default', series(clear, scss, jsTask, imgTask, htmlTask, serve));
