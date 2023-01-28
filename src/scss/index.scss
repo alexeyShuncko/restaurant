@@ -1,6 +1,26 @@
 $primary-color: #d3b47f;
 $bg-clr: #3a4574;
 
+.mask {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  &.shadow {
+    display: block;
+  }
+}
+
+body {
+  &.shadow {
+    overflow: hidden;
+  }
+}
+
 body,
 ul {
   font-family: 'Poppins', sans-serif;
@@ -21,7 +41,6 @@ ul > li {
   justify-content: center;
   padding: 10px 20px;
   background: center url(../img/head.png);
-  // min-height: 100vh;
 }
 
 .reserve__head {
@@ -59,6 +78,10 @@ ul > li {
         padding: 10px 20px;
         border-bottom: 1px solid #e7e7e7;
         color: $bg-clr;
+        transition: 0.2s;
+        &:hover {
+          color: $primary-color;
+        }
       }
       &.active {
         visibility: visible;
@@ -93,6 +116,9 @@ ul > li {
   display: none;
 }
 @media (min-width: 1024px) {
+  html {
+    font-size: 25px;
+  }
   .head__menu,
   .head__menu__container {
     display: none;
@@ -102,7 +128,12 @@ ul > li {
     gap: 20px;
     color: #ffffff;
     li {
+      font-size: 16px;
       cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        color: $primary-color;
+      }
     }
   }
 }
@@ -114,21 +145,27 @@ ul > li {
 .phone {
   i {
     color: $primary-color;
-    font-size: 1.25em;
+    font-size: 1.25rem;
   }
   span {
+    cursor: pointer;
     color: #ffffff;
+    transition: 0.2s;
+
+    &:hover {
+      color: $primary-color;
+    }
   }
 }
 .reserve__time {
   color: #ffffff;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   margin-bottom: 24px;
 }
 .reserve__title {
   color: #ffffff;
-  font-size: 1.3em;
-  line-height: 1.8em;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
   font-weight: 700;
 }
 
@@ -139,15 +176,20 @@ ul > li {
   margin-top: 40px;
   margin-bottom: 265px;
   button {
-    padding: 15px 20px;
+    padding: 1rem 2rem;
     background: $bg-clr;
     color: #ffffff;
     border: none;
     outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      box-shadow: 0 0 10px $bg-clr, 0 0 20px $bg-clr;
+    }
   }
   ul {
     display: flex;
-    gap: 5px;
+    gap: 0.5rem;
     li {
       display: flex;
       align-items: center;
@@ -155,9 +197,67 @@ ul > li {
       color: #ffffff;
       border: 1px solid #ffffff;
       border-radius: 50%;
-      width: 18px;
-      height: 18px;
-      font-size: 0.8em;
+      width: 1.2rem;
+      height: 1.2rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        color: $primary-color;
+        border: 1px solid $primary-color;
+      }
+    }
+  }
+}
+.formContainer {
+  display: none;
+  &.active {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 350px;
+    left: 0;
+    z-index: 20;
+  }
+}
+
+.formReserve {
+  width: 50%;
+  margin: 0px auto;
+  padding: 30px 40px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    outline: none;
+    &:hover,
+    &:focus {
+      border: 1px solid $bg-clr;
+    }
+  }
+  button {
+    background: $bg-clr;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      box-shadow: 0 0 10px $bg-clr, 0 0 20px $bg-clr;
+    }
+  }
+  #btnExit {
+    background: #db8282;
+    &:hover {
+      box-shadow: 0 0 10px #db8282, 0 0 20px #db8282;
     }
   }
 }
@@ -170,8 +270,18 @@ ul > li {
   margin: 20px auto;
   max-width: 1024px;
   img {
-    width: 150px;
-    height: 225px;
+    width: 10rem;
+    height: 14rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px auto;
+    max-width: 1024px;
   }
 }
 
@@ -186,7 +296,7 @@ ul > li {
   .dish {
     display: flex;
     align-items: center;
-    font-size: 0.75em;
+    font-size: 0.75rem;
     margin-bottom: 5px;
     .dish__dots {
       height: 5px;
@@ -255,20 +365,20 @@ ul > li {
   }
   .swiper-slide__text {
     width: 70%;
-    font-size: 0.8em;
-    line-height: 1em;
+    font-size: 0.8rem;
+    line-height: 1rem;
     margin-bottom: 10px;
   }
   .swiper-slide__name {
-    font-size: 0.9em;
-    letter-spacing: 0.245em;
+    font-size: 0.9rem;
+    letter-spacing: 0.245rem;
   }
 }
 .swiper-button-prev,
 .swiper-button-next {
   color: $primary-color;
   &::after {
-    font-size: 1.4em;
+    font-size: 1.4rem;
   }
 }
 .swiper-button-prev.swiper-button-disabled,

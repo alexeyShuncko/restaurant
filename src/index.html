@@ -17,7 +17,7 @@
     <title>Document</title>
   </head>
   <body>
-
+      <div class="mask"></div>
       <div class="reserve">
         <div class="reserve__content">
           <div class="reserve__head">
@@ -50,8 +50,9 @@
           <div class="reserve__title">
             A bad day with lunch is better than a good day without it.
           </div>
+         
           <div class="reserve__btn">
-            <button>Reserve a table</button>
+            <button id="btnForm">Reserve a table</button>
             <ul>
               <li>Fb</li>
               <li>Ig</li>
@@ -59,8 +60,28 @@
               <li>Yt</li>
             </ul>
           </div>
+        
+          
         </div>
       </div>
+      <div class="formContainer">
+        <form class="formReserve">
+          <div>
+            <label>Name:</label>
+            <input placeholder="Input your name" name="name"></input>
+          </div>
+          <div>
+            <label>Email:</label>
+            <input placeholder="Input your email" name="email"></input>
+          </div>
+          <div>
+            <button id="btnReserve" >Reserve</button>
+            <button id="btnExit" >Exit</button>
+          </div>
+        
+        </form>
+      </div>
+      
       <div class="menu">
        
           <ul class="menu__list">
