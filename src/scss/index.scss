@@ -1,12 +1,16 @@
 $primary-color: #d3b47f;
 $bg-clr: #3a4574;
 
+body {
+  position: relative;
+}
+
 .mask {
   display: none;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  min-height: 200vh;
+  height: 100%;
   min-width: 100vw;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
@@ -223,8 +227,8 @@ ul > li {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 350px;
+    position: fixed;
+    top: 150px;
     left: 0;
     z-index: 20;
   }
