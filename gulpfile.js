@@ -19,7 +19,7 @@ function htmlTask() {
 }
 
 function jsTask() {
-  return src('src/**.js').pipe(dest('dist'));
+  return src('src/js/*.js').pipe(dest('dist/js'));
 }
 
 function imgTask() {
@@ -31,7 +31,7 @@ function scss() {
     .pipe(sass())
     .pipe(autoprefixer())
     .pipe(csso())
-    .pipe(dest('dist'));
+    .pipe(dest('dist/css'));
 }
 
 function serve() {

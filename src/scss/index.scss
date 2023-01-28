@@ -20,18 +20,16 @@ ul > li {
   align-items: center;
   justify-content: center;
   padding: 10px 20px;
+  background: center url(../img/head.png);
+  min-height: 100vh;
 }
-.reserve__img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+
 .reserve__head {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 154px;
   img {
     width: 30%;
   }
@@ -50,14 +48,14 @@ ul > li {
   }
 }
 .reserve__time {
-  margin-top: 10px;
   color: #ffffff;
   font-size: 0.8em;
+  margin-bottom: 24px;
 }
 .reserve__title {
   color: #ffffff;
   font-size: 1.3em;
-  line-height: 1.3em;
+  line-height: 1.8em;
   font-weight: 700;
 }
 
@@ -65,9 +63,10 @@ ul > li {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0;
+  margin-top: 40px;
+  margin-bottom: 265px;
   button {
-    padding: 8px 10px;
+    padding: 15px 20px;
     background: $bg-clr;
     color: #ffffff;
     border: none;
@@ -94,7 +93,9 @@ ul > li {
   padding: 10px 20px;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 1024px;
   img {
     width: 150px;
     height: 225px;
@@ -160,7 +161,7 @@ ul > li {
 
 .swiper__container {
   background: $bg-clr;
-  padding: 10px 20px;
+  padding: 220px 20px;
 }
 
 .swiper-slide {
